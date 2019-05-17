@@ -67,7 +67,7 @@ public class SettingPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<String,Object>(){
 
                     @Override
-                    public void onResponse(String selfGoodsBeans, String status) {
+                    public void onResponse(String selfGoodsBeans, String status,Object page) {
                         settingContract.LoginOutSuccess(selfGoodsBeans);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -102,7 +102,7 @@ public class SettingPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<DownloadBean , Object>() {
 
                     @Override
-                    public void onResponse(DownloadBean downloadBean, String status) {
+                    public void onResponse(DownloadBean downloadBean, String status,Object page) {
                         settingContract.updateSuccess(downloadBean);
                     }
 

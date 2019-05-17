@@ -24,6 +24,11 @@ public class OrderDetailBean {
     private String Effective_Payment_Time;
     private String consignee;
     private String mobile;
+    private String lgs_id;
+    private String lgs_name;
+    private String lgs_number;
+    private String lgs_say;
+    private String take_time;
 
     public double getShipping_fee() {
         return shipping_fee;
@@ -159,5 +164,45 @@ public class OrderDetailBean {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getLgs_id() {
+        return lgs_id;
+    }
+
+    public void setLgs_id(String lgs_id) {
+        this.lgs_id = lgs_id;
+    }
+
+    public String getLgs_name() {
+        return lgs_name;
+    }
+
+    public void setLgs_name(String lgs_name) {
+        this.lgs_name = lgs_name;
+    }
+
+    public String getLgs_number() {
+        return lgs_number;
+    }
+
+    public void setLgs_number(String lgs_number) {
+        this.lgs_number = lgs_number;
+    }
+
+    public String getLgs_say() {
+        return lgs_say;
+    }
+
+    public void setLgs_say(String lgs_say) {
+        this.lgs_say = lgs_say;
+    }
+
+    public String getTake_time() {
+        return take_time;
+    }
+
+    public void setTake_time(String take_time) {
+        this.take_time = take_time;
     }
 }

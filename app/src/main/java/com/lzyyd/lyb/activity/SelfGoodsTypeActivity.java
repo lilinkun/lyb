@@ -91,6 +91,7 @@ public class SelfGoodsTypeActivity extends BaseActivity implements SelfGoodsCont
 
     private boolean isPrice = false;
     private boolean isTop = false;
+    private boolean isLoad = true;
 
     private GetPagerAdapter getPagerAdapter;
     private SelfGoodFragment selfGoodFragment;
@@ -181,7 +182,7 @@ public class SelfGoodsTypeActivity extends BaseActivity implements SelfGoodsCont
 //                            mHandler.postDelayed(new Runnable() {
 //                                @Override
 //                                public void run() {
-                            if (PAGE_INDEX * Integer.valueOf(PAGE_COUNT) > selfGoodsBeans.size()){
+                            if (!isLoad){
                                 toast("已到末尾");
                             }else {
                                 PAGE_INDEX++;
@@ -347,7 +348,8 @@ public class SelfGoodsTypeActivity extends BaseActivity implements SelfGoodsCont
     }
 
     @Override
-    public void getDataSuccess(ArrayList<SelfGoodsBean> selfGoodsBeans) {
+    public void getDataSuccess(ArrayList<SelfGoodsBean> selfGoodsBeans,boolean page) {
+        this.isLoad = page;
         if (refreshLayout != null  && refreshLayout.isRefreshing()){
             refreshLayout.setRefreshing(false);
         }

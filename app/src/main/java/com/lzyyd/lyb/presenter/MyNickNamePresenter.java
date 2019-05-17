@@ -62,7 +62,7 @@ public class MyNickNamePresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack(){
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         myNickNameContract.modifySuccess();
                     }
 

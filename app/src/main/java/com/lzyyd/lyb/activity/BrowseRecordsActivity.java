@@ -70,6 +70,7 @@ public class BrowseRecordsActivity extends BaseActivity implements OnTitleBarCli
     private int PageIndex = 1;
     private LinearLayoutManager linearLayoutManager;
     private int lastVisibleItem = 0;
+    private int maxPage = 1;
     ArrayList<Long> longs = new ArrayList<>();
 
     @Override
@@ -106,6 +107,7 @@ public class BrowseRecordsActivity extends BaseActivity implements OnTitleBarCli
             @Override
             public void onRefresh() {
                 if (position == 2) {
+                    PageIndex = 1;
                     customTitleBar.setTileName(getResources().getString(R.string.me_collection));
                     collectPresenter.getCollectDataList(PageIndex + "", PAGE_COUNT, ProApplication.SESSIONID(BrowseRecordsActivity.this));
                 }else if (position == 1){
@@ -132,8 +134,8 @@ public class BrowseRecordsActivity extends BaseActivity implements OnTitleBarCli
                     if (recordAdapter != null) {
                         if (lastVisibleItem + 1 == recordAdapter.getItemCount()) {
                             if (position == 2) {
-                                if (collectBeans.size() == PageIndex * Integer.valueOf(PAGE_COUNT)) {
-                                    PageIndex = 1;
+                                if (PageIndex < maxPage) {
+                                    PageIndex++;
                                     collectPresenter.getCollectDataList(PageIndex + "", PAGE_COUNT, ProApplication.SESSIONID(BrowseRecordsActivity.this));
                                 }
                             }
@@ -263,7 +265,11 @@ public class BrowseRecordsActivity extends BaseActivity implements OnTitleBarCli
     }
 
     @Override
-    public void getCollectDataSuccess(ArrayList<CollectBean> collectBeans) {
+    public void getCollectDataSuccess(ArrayList<CollectBean> collectBeans,String maxPage) {
+
+        if (maxPage != null && maxPage.toString().length() >= 1){
+            this.maxPage = Integer.valueOf(maxPage);
+        }
 
         if (refreshLayout != null && refreshLayout.isRefreshing()){
             refreshLayout.setRefreshing(false);

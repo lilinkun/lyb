@@ -61,7 +61,7 @@ public class ForgetPasswordPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack() {
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         forgetPasswordContract.getMobileSuccess(o.toString());
                     }
 
@@ -86,7 +86,7 @@ public class ForgetPasswordPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack() {
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         forgetPasswordContract.getVcodeSuccess(status.toString());
                     }
 

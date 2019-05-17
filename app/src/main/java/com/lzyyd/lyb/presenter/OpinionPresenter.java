@@ -63,7 +63,7 @@ public class OpinionPresenter extends BasePresenter {
 
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         opinionContract.onUploadSuccess();
                     }
 

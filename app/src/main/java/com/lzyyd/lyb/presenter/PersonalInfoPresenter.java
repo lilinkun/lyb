@@ -76,7 +76,7 @@ public class PersonalInfoPresenter extends BasePresenter {
         .subscribe(new HttpResultCallBack<PersonalInfoBean,Object>() {
 
             @Override
-            public void onResponse(PersonalInfoBean loginBean, String status) {
+            public void onResponse(PersonalInfoBean loginBean, String status,Object page) {
                 personalInfoContract.getInfoSuccess(loginBean);
             }
 
@@ -104,7 +104,7 @@ public class PersonalInfoPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean o, String status) {
+                    public void onResponse(CollectDeleteBean o, String status,Object page) {
                         personalInfoContract.uploadImageSuccess(o);
                     }
 

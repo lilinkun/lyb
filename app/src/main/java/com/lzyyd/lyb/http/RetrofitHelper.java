@@ -26,15 +26,15 @@ public class RetrofitHelper {
     private Context mCntext;
     //    接口根地址
     //    public static final String BASE_URL = "https://appapi.100zt.com/api/WebService/";
-//    public static final String BASE_URL = "http://192.168.0.142:8080/FirstWebProject/servlet/";
-//        public static final String BASE_URL = "http://oa.lzyyd.com:81/api/WebService/";
-//        public static final String BASE_URL = "http://lyb.mmibb.net:98/api/WebService/";
-        public static final String BASE_URL = "http://api.boos999.com/api/WebService/";
-    //        public static final String BASE_URL = "http://192.168.0.128:66/api/WebService/";
-//            public static final String BASE_URL = "http://192.168.0.167:66/api/WebService/";
-    //        public static final String BASE_URL = "http://192.168.0.168:81/api/WebService/";
+    //    public static final String BASE_URL = "http://192.168.0.142:8080/FirstWebProject/servlet/";
+    //    public static final String BASE_URL = "http://oa.lzyyd.com:81/api/WebService/";
+    //    public static final String BASE_URL = "http://lyb.mmibb.net:98/api/WebService/";
+          public static final String BASE_URL = "http://api.boos999.com/api/WebService/";
+    //    public static final String BASE_URL = "http://192.168.0.128:66/api/WebService/";
+    //    public static final String BASE_URL = "http://192.168.0.167:66/api/WebService/";
+    //    public static final String BASE_URL = "http://192.168.0.168:81/api/WebService/";
 
-//    public static final String ImageUrl = "http://lyb.mmibb.net:98/api/ClearImg/Upload";
+    //    public static final String ImageUrl = "http://lyb.mmibb.net:98/api/ClearImg/Upload";
     public static final String ImageUrl = "http://api.boos999.com/api/ClearImg/Upload";
     //    设置超时时间
     private static final long DEFAULT_TIMEOUT = 15_000L;
@@ -67,15 +67,15 @@ public class RetrofitHelper {
         client = new OkHttpClient.Builder()
                 .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS)
                 //添加请求头
-//                .addInterceptor(LoggingInterceptor)
-//                .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
+                //.addInterceptor(LoggingInterceptor)
+                //.addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)
                 //添加日志打印拦截器
                 .addInterceptor(new LoggerInterceptor("===", true))
                 .build();
 
 
         mRetrofit = new Retrofit.Builder()
-//                .baseUrl("https://api.douban.com/v2/")0
+                //.baseUrl("https://api.douban.com/v2/")0
                 .baseUrl(BASE_URL)
                 .client(client)
                 .addConverterFactory(factory)

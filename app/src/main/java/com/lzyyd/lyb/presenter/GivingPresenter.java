@@ -62,7 +62,7 @@ public class GivingPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<IntegralBean,Object>() {
                     @Override
-                    public void onResponse(IntegralBean integralBean, String status) {
+                    public void onResponse(IntegralBean integralBean, String status,Object page) {
 //                        integralContract.getGoodsIntegralSuccess(integralBean);
                     }
 
@@ -85,7 +85,7 @@ public class GivingPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<IntegralBean,Object>() {
                     @Override
-                    public void onResponse(IntegralBean integralBean, String status) {
+                    public void onResponse(IntegralBean integralBean, String status,Object page) {
 //                        integralContract.getGoodsIntegralSuccess(integralBean);
                     }
 
@@ -107,7 +107,7 @@ public class GivingPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<PersonalInfoBean,Object>() {
 
                     @Override
-                    public void onResponse(PersonalInfoBean loginBean, String status) {
+                    public void onResponse(PersonalInfoBean loginBean, String status,Object page) {
 //                        meContract.getInfoSuccess(loginBean);
                     }
 

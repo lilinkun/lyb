@@ -72,7 +72,7 @@ public class SelfSearchPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<TbjsonBean<ArrayList<TbMaterielBean>>,Object>(){
 
                     @Override
-                    public void onResponse(TbjsonBean<ArrayList<TbMaterielBean>> arrayListTbjsonBean, String status) {
+                    public void onResponse(TbjsonBean<ArrayList<TbMaterielBean>> arrayListTbjsonBean, String status,Object page) {
                         selfSearchContract.onSuccess(arrayListTbjsonBean.getResultList());
 //                        homeContract.onSuccess(arrayListTbjsonBean.getResults()));
                     }
@@ -100,7 +100,7 @@ public class SelfSearchPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<ArrayList<String>,Object>(){
 
                     @Override
-                    public void onResponse(ArrayList<String> selfGoodsBeans, String status) {
+                    public void onResponse(ArrayList<String> selfGoodsBeans, String status,Object page) {
                         selfSearchContract.onSelfSuccess(selfGoodsBeans);
                     }
 

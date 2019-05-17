@@ -61,7 +61,7 @@ public class MePresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<PersonalInfoBean,Object>() {
 
                     @Override
-                    public void onResponse(PersonalInfoBean loginBean, String status) {
+                    public void onResponse(PersonalInfoBean loginBean, String status,Object page) {
                         meContract.getInfoSuccess(loginBean);
                     }
 

@@ -65,7 +65,7 @@ public class JdGoodsPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<ArrayList<JdGoodsBean>,Object>() {
                     @Override
-                    public void onResponse(ArrayList<JdGoodsBean> jdGoodsBean, String status) {
+                    public void onResponse(ArrayList<JdGoodsBean> jdGoodsBean, String status,Object page) {
                         jdGoodsContract.getDataSuccess(jdGoodsBean);
                     }
 

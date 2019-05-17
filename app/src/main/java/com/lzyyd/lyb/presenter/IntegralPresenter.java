@@ -64,7 +64,7 @@ public class IntegralPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<IntegralBean,Object>() {
                     @Override
-                    public void onResponse(IntegralBean integralBean, String status) {
+                    public void onResponse(IntegralBean integralBean, String status,Object page) {
                         integralContract.getGoodsIntegralSuccess(integralBean);
                     }
 
@@ -88,7 +88,7 @@ public class IntegralPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<AmountPriceBean,Object>() {
                     @Override
-                    public void onResponse(AmountPriceBean integralBean, String status) {
+                    public void onResponse(AmountPriceBean integralBean, String status,Object page) {
                         integralContract.getDataSuccess(integralBean);
                     }
 

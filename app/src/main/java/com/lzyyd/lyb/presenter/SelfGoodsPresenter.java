@@ -6,6 +6,7 @@ import android.content.Context;
 import com.lzyyd.lyb.contract.LoginContract;
 import com.lzyyd.lyb.contract.SelfGoodsContract;
 import com.lzyyd.lyb.entity.LoginBean;
+import com.lzyyd.lyb.entity.PageBean;
 import com.lzyyd.lyb.entity.ResultBean;
 import com.lzyyd.lyb.entity.SelfGoodsBean;
 import com.lzyyd.lyb.http.callback.HttpResultCallBack;
@@ -70,11 +71,15 @@ public class SelfGoodsPresenter extends BasePresenter {
         mCompositeSubscription.add(manager.getselfGoodList(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new HttpResultCallBack<ArrayList<SelfGoodsBean>,Object>(){
+                .subscribe(new HttpResultCallBack<ArrayList<SelfGoodsBean>,PageBean>(){
 
                     @Override
-                    public void onResponse(ArrayList<SelfGoodsBean> selfGoodsBeans, String status) {
-                        selfGoodsContract.getDataSuccess(selfGoodsBeans);
+                    public void onResponse(ArrayList<SelfGoodsBean> selfGoodsBeans, String status,PageBean page) {
+                        if (page.getMaxPage().equals(page.getPageIndex())) {
+                            selfGoodsContract.getDataSuccess(selfGoodsBeans, false);
+                        }else {
+                            selfGoodsContract.getDataSuccess(selfGoodsBeans, true);
+                        }
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
                         }

@@ -72,7 +72,7 @@ public class ChooseAddressPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<ArrayList<AddressBean>, Object>() {
 
                     @Override
-                    public void onResponse(ArrayList<AddressBean> addressBeans, String status) {
+                    public void onResponse(ArrayList<AddressBean> addressBeans, String status,Object page) {
                             chooseAddressContract.setDataSuccess(addressBeans);
                     }
 
@@ -102,7 +102,7 @@ public class ChooseAddressPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack() {
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         chooseAddressContract.deleteSuccess();
                     }
 
@@ -132,7 +132,7 @@ public class ChooseAddressPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<CollectDeleteBean ,Object>() {
 
                     @Override
-                    public void onResponse(CollectDeleteBean collectDeleteBean, String status) {
+                    public void onResponse(CollectDeleteBean collectDeleteBean, String status,Object page) {
                         chooseAddressContract.isDefaultSuccess(collectDeleteBean);
                     }
 

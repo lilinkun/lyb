@@ -64,7 +64,7 @@ public class ModifyPayPsdPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack(){
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         modifyPayPsdContract.onSendVcodeSuccess();
                     }
 
@@ -100,7 +100,7 @@ public class ModifyPayPsdPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack(){
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         modifyPayPsdContract.modifySuccess();
                     }
 
@@ -138,7 +138,7 @@ public class ModifyPayPsdPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack(){
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         modifyPayPsdContract.modifyPsdSuccess();
                     }
 

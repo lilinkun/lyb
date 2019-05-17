@@ -81,7 +81,7 @@ public class TbAllPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<TbjsonBean<ArrayList<TbMaterielBean>>,Object>(){
 
                     @Override
-                    public void onResponse(TbjsonBean<ArrayList<TbMaterielBean>> arrayListTbjsonBean, String status) {
+                    public void onResponse(TbjsonBean<ArrayList<TbMaterielBean>> arrayListTbjsonBean, String status,Object page) {
                         tbAllContract.onSuccess(arrayListTbjsonBean.getResultList());
 //                        homeContract.onSuccess(arrayListTbjsonBean.getResults()));
                         if (progressDialog != null && progressDialog.isShowing()) {

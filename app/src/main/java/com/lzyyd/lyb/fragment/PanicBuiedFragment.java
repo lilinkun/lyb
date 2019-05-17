@@ -38,6 +38,7 @@ public class PanicBuiedFragment extends BaseFragment implements RushBuyContract,
     private ArrayList<RushBuyBean> rushBuyBeans;
     private int pageIndex = 1;
     private int lastVisibleItem = 0;
+    private boolean isUpdate = false;
 
     @Override
     public int getlayoutId() {
@@ -60,6 +61,7 @@ public class PanicBuiedFragment extends BaseFragment implements RushBuyContract,
             public void onRefresh() {
                 pageIndex = 1;
                 rushBuyPresenter.getData(pageIndex+"", LzyydUtil.PAGE_COUNT,2+"", ProApplication.SESSIONID(getActivity()));
+                isUpdate = true;
             }
         });
 
@@ -106,10 +108,20 @@ public class PanicBuiedFragment extends BaseFragment implements RushBuyContract,
             refreshLayout.setRefreshing(false);
         }
         if (rushBuyBeans != null) {
-            this.rushBuyBeans = rushBuyBeans;
-            panicbuyingAdapter = new PanicbuyingAdapter(getActivity(), rushBuyBeans, 1);
-            rv_panicbuied.setAdapter(panicbuyingAdapter);
-            panicbuyingAdapter.setItemClickListener(this);
+            if (pageIndex == 1) {
+                if (isUpdate) {
+                    this.rushBuyBeans = rushBuyBeans;
+                    panicbuyingAdapter.setData(rushBuyBeans);
+                } else {
+                    this.rushBuyBeans = rushBuyBeans;
+                    panicbuyingAdapter = new PanicbuyingAdapter(getActivity(), rushBuyBeans, 1);
+                    rv_panicbuied.setAdapter(panicbuyingAdapter);
+                    panicbuyingAdapter.setItemClickListener(this);
+                }
+            }else {
+                this.rushBuyBeans.addAll(rushBuyBeans);
+                panicbuyingAdapter.setData(rushBuyBeans);
+            }
         }else {
             if (pageIndex == 1){
                 this.rushBuyBeans = rushBuyBeans;

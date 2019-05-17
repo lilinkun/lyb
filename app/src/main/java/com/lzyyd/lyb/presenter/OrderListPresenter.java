@@ -64,7 +64,7 @@ public class OrderListPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CountBean,Object>() {
                     @Override
-                    public void onResponse(CountBean countBean, String status) {
+                    public void onResponse(CountBean countBean, String status,Object page) {
                         orderListContract.InfoAccountSuccess(countBean);
                     }
 
@@ -90,7 +90,7 @@ public class OrderListPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean collectDeleteBean, String status) {
+                    public void onResponse(CollectDeleteBean collectDeleteBean, String status,Object page) {
                         orderListContract.selfPaySuccess(collectDeleteBean);
                     }
 
@@ -116,7 +116,7 @@ public class OrderListPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean collectDeleteBean, String status) {
+                    public void onResponse(CollectDeleteBean collectDeleteBean, String status,Object page) {
                         orderListContract.sureReceiptSuccess(collectDeleteBean);
                     }
 
@@ -144,7 +144,7 @@ public class OrderListPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<WxRechangeBean,Object>() {
                     @Override
-                    public void onResponse(WxRechangeBean fareBean, String status) {
+                    public void onResponse(WxRechangeBean fareBean, String status,Object page) {
                         orderListContract.wxInfoSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();

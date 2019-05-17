@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.TabLayout;
@@ -60,12 +61,16 @@ import com.lzyyd.lyb.presenter.OrderListPresenter;
 import com.lzyyd.lyb.util.ButtonUtils;
 import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;
+import com.lzyyd.lyb.util.MessageEvent;
 import com.lzyyd.lyb.util.QRCodeUtil;
 import com.lzyyd.lyb.util.UToast;
 import com.lzyyd.lyb.util.UiHelper;
 import com.lzyyd.lyb.wxapi.WXPayEntryActivity;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.json.JSONException;
 
 import java.text.ParseException;
@@ -113,7 +118,6 @@ public class OrderListActivity extends BaseActivity implements IPayOrderClickLis
     Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
-
         }
     };
     KeplerAttachParameter mKeplerAttachParameter = new KeplerAttachParameter();//这个是即时性参数  可以设置
@@ -597,5 +601,8 @@ public class OrderListActivity extends BaseActivity implements IPayOrderClickLis
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

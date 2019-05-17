@@ -14,7 +14,7 @@ public abstract class HttpResultCallBack<M,T> extends Subscriber<ResultBean<M,T>
     /**
      * 请求返回
      */
-    public abstract void onResponse(M m, String status);
+    public abstract void onResponse(M m, String status,T page);
     public abstract void onErr(String msg, String status);
 
     /**
@@ -52,9 +52,9 @@ public abstract class HttpResultCallBack<M,T> extends Subscriber<ResultBean<M,T>
         Log.d("HttpResultCallBack", "返回ok==：" + jsonResponse);
         if (result.getStatus().equals(LzyydUtil.RESULT_SUCCESS)) {
             if (result.getData() == null){
-                onResponse(result.getData(), result.getDesc());
+                onResponse(result.getData(), result.getDesc(),result.getPage());
             }else {
-                onResponse(result.getData(), LzyydUtil.RESULT_SUCCESS);
+                onResponse(result.getData(), LzyydUtil.RESULT_SUCCESS,result.getPage());
             }
         } else {
             onHttpFail(result.getDesc(), LzyydUtil.RESULT_FAIL + result.getCode());

@@ -3,6 +3,7 @@ package com.lzyyd.lyb.presenter;
 import android.content.Context;
 
 import com.lzyyd.lyb.contract.MemberShipContract;
+import com.lzyyd.lyb.entity.PageBean;
 import com.lzyyd.lyb.entity.ResultBean;
 import com.lzyyd.lyb.entity.SelfGoodsBean;
 import com.lzyyd.lyb.http.callback.HttpResultCallBack;
@@ -61,10 +62,10 @@ public class MemberShipPresenter extends BasePresenter {
         mCompositeSubscription.add(manager.getselfGoodList(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new HttpResultCallBack<ArrayList<SelfGoodsBean>,Object>(){
+                .subscribe(new HttpResultCallBack<ArrayList<SelfGoodsBean>,PageBean>(){
 
                     @Override
-                    public void onResponse(ArrayList<SelfGoodsBean> selfGoodsBeans, String status) {
+                    public void onResponse(ArrayList<SelfGoodsBean> selfGoodsBeans, String status,PageBean page) {
                         memberShipContract.getDataSuccess(selfGoodsBeans);
                     }
 

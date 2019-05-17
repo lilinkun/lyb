@@ -7,6 +7,7 @@ import com.lzyyd.lyb.contract.HomeContract;
 import com.lzyyd.lyb.entity.CollectBean;
 import com.lzyyd.lyb.entity.CollectDeleteBean;
 import com.lzyyd.lyb.entity.HomeHeadBean;
+import com.lzyyd.lyb.entity.PageBean;
 import com.lzyyd.lyb.entity.ResultBean;
 import com.lzyyd.lyb.entity.TbMaterielBean;
 import com.lzyyd.lyb.entity.TbjsonBean;
@@ -64,10 +65,10 @@ public class CollectPresenter extends BasePresenter {
         mCompositeSubscription.add(manager.GoodCollectList(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new HttpResultCallBack<ArrayList<CollectBean>,Object>() {
+                .subscribe(new HttpResultCallBack<ArrayList<CollectBean>,PageBean>() {
                     @Override
-                    public void onResponse(ArrayList<CollectBean> collectBeans, String status) {
-                        collectContract.getCollectDataSuccess(collectBeans);
+                    public void onResponse(ArrayList<CollectBean> collectBeans, String status,PageBean page) {
+                        collectContract.getCollectDataSuccess(collectBeans,page.getMaxPage());
                     }
 
                     @Override
@@ -88,7 +89,7 @@ public class CollectPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean collectBeans, String status) {
+                    public void onResponse(CollectDeleteBean collectBeans, String status,Object page) {
                         if (collectBeans.getStatus() == 0) {
                             collectContract.deleteCollectSuccess(collectBeans.getMessage());
                         }else {

@@ -69,7 +69,7 @@ public class SelfOrderPresenter extends BasePresenter{
                 .subscribe(new HttpResultCallBack<ArrayList<SelfOrderBean>,Object>(){
 
                     @Override
-                    public void onResponse(ArrayList<SelfOrderBean> selfGoodsBeans, String status) {
+                    public void onResponse(ArrayList<SelfOrderBean> selfGoodsBeans, String status,Object page) {
                         selfOrderContract.getDataSuccess(selfGoodsBeans);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -106,7 +106,7 @@ public class SelfOrderPresenter extends BasePresenter{
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>(){
 
                     @Override
-                    public void onResponse(CollectDeleteBean collectDeleteBean, String status) {
+                    public void onResponse(CollectDeleteBean collectDeleteBean, String status,Object page) {
                         selfOrderContract.exitOrderSuccess(collectDeleteBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();

@@ -62,7 +62,7 @@ public class MainFragmentPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<DownloadBean, Object>() {
 
                     @Override
-                    public void onResponse(DownloadBean downloadBean, String status) {
+                    public void onResponse(DownloadBean downloadBean, String status,Object page) {
                         mainFragmentContract.getUpdateSuccess(downloadBean);
                     }
 

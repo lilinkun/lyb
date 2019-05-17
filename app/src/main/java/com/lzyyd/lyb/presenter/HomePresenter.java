@@ -67,7 +67,7 @@ public class HomePresenter extends BasePresenter {
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(new HttpResultCallBack<HomeHeadBean,Object>() {
             @Override
-            public void onResponse(HomeHeadBean homeHeadBean, String status) {
+            public void onResponse(HomeHeadBean homeHeadBean, String status,Object page) {
                 homeContract.onFlashSuccess(homeHeadBean);
             }
 
@@ -99,7 +99,7 @@ public class HomePresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<UrlBean,Object>(){
 
                     @Override
-                    public void onResponse(UrlBean urlBean, String status) {
+                    public void onResponse(UrlBean urlBean, String status,Object page) {
                         homeContract.getUrlSuccess(urlBean);
 //                        homeContract.onSuccess(arrayListTbjsonBean.getResults()));
                     }

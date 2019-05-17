@@ -21,6 +21,7 @@ import com.lzyyd.lyb.entity.LoginBean;
 import com.lzyyd.lyb.entity.OrderBean;
 import com.lzyyd.lyb.entity.OrderDetailBean;
 import com.lzyyd.lyb.entity.OrderListBean;
+import com.lzyyd.lyb.entity.PageBean;
 import com.lzyyd.lyb.entity.PersonalInfoBean;
 import com.lzyyd.lyb.entity.ProvinceBean;
 import com.lzyyd.lyb.entity.ResultBean;
@@ -205,7 +206,7 @@ public class DataManager {
     /**
      * 获取自营商品收藏列表
      */
-    public Observable<ResultBean<ArrayList<CollectBean>,Object>> GoodCollectList(HashMap<String,String> mHashMap){
+    public Observable<ResultBean<ArrayList<CollectBean>,PageBean>> GoodCollectList(HashMap<String,String> mHashMap){
         return mRetrofitService.GoodCollectList(mHashMap);
     }
     /**
@@ -225,7 +226,7 @@ public class DataManager {
     /**
      * 获取自营商品列表
      */
-    public Observable<ResultBean<ArrayList<SelfGoodsBean>,Object>> getselfGoodList(HashMap<String,String> mHashMap){
+    public Observable<ResultBean<ArrayList<SelfGoodsBean>,PageBean>> getselfGoodList(HashMap<String,String> mHashMap){
         return mRetrofitService.getselfGoodList(mHashMap);
     }
 

@@ -58,7 +58,7 @@ public class AddressPickerPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<ArrayList<ProvinceBean>,Object>() {
                     @Override
-                    public void onResponse(ArrayList<ProvinceBean> provinceBeans, String status) {
+                    public void onResponse(ArrayList<ProvinceBean> provinceBeans, String status,Object page) {
                         addressPickerContract.getDataSuccess(provinceBeans,localType);
                     }
 

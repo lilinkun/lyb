@@ -39,9 +39,13 @@ import com.lzyyd.lyb.presenter.AllOrderPresenter;
 import com.lzyyd.lyb.util.ButtonUtils;
 import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;
+import com.lzyyd.lyb.util.MessageEvent;
+import com.lzyyd.lyb.util.UToast;
 import com.lzyyd.lyb.util.UiHelper;
 import com.lzyyd.lyb.wxapi.WXPayEntryActivity;
 import com.tencent.mm.opensdk.modelpay.PayReq;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -97,6 +101,12 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
     TextView tv_pay_style;
     @BindView(R.id.tv_pay_message)
     TextView tv_pay_message;
+    @BindView(R.id.pay_date)
+    TextView tv_pay_date;
+    @BindView(R.id.send_out_date)
+    TextView send_out_date;
+    @BindView(R.id.logistics_information)
+    TextView logistics_information;
 
     AllOrderPresenter allOrderPresenter = new AllOrderPresenter();
     private OrderDetailBean orderDetailBean;
@@ -118,7 +128,6 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
 
     @Override
     public void initEventAndData() {
-
         Eyes.setStatusBarWhiteColor(this,getResources().getColor(R.color.white));
         orderSn = getIntent().getBundleExtra(LzyydUtil.TYPEID).getString("order_sn");
         status = getIntent().getBundleExtra(LzyydUtil.TYPEID).getInt("status");
@@ -141,7 +150,6 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
             tv_pay_message.setText("买家已付款，等待发货");
             rl_bottom.setVisibility(View.GONE);
         }else if (status == 2){
-            ll_price_status.setVisibility(View.GONE);
             tv_exit_order.setVisibility(View.GONE);
             tv_pay_order.setText("确认收货");
             tv_pay_style.setText("已发货");
@@ -229,7 +237,7 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
         }
 
         goods_total_price.setText("¥"+payid + "");
-        tv_use_point.setText("-" + useIntegral);
+        tv_use_point.setText("" + useIntegral);
         tv_fare.setText(shipping_fee + "");
         tv_total.setText("¥"+ order_amount + "");
         tv_order_pay_price.setText("¥"+ order_amount+"");
@@ -237,6 +245,10 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
         tv_consignee_address.setText(orderDetailBean.getAddressName() + orderDetailBean.getAddress());
         tv_consignee_name.setText(orderDetailBean.getConsignee());
         tv_consignee_phone.setText(orderDetailBean.getMobile());
+
+        tv_pay_date.setText(orderDetailBean.getPay_time()+"");
+        send_out_date.setText(orderDetailBean.getShipping_time()+"");
+        logistics_information.setText(orderDetailBean.getLgs_name() + " " + orderDetailBean.getLgs_number());
 
         tv_exit_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -505,5 +517,10 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
         }
 
         toast("支付失败");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

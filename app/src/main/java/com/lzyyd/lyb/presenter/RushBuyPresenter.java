@@ -62,7 +62,7 @@ public class RushBuyPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<ArrayList<RushBuyBean>,Object>(){
 
                     @Override
-                    public void onResponse(ArrayList<RushBuyBean> o, String status) {
+                    public void onResponse(ArrayList<RushBuyBean> o, String status,Object page) {
                         rushBuyContract.getDataSuccess(o);
                     }
 
@@ -94,7 +94,7 @@ public class RushBuyPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<ArrayList<RushBuyBean>, Object>() {
 
                     @Override
-                    public void onResponse(ArrayList<RushBuyBean> o, String status) {
+                    public void onResponse(ArrayList<RushBuyBean> o, String status,Object page) {
                         rushBuyContract.getDataSuccess(o);
                     }
 

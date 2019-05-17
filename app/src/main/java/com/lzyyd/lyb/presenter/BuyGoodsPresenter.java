@@ -58,7 +58,7 @@ public class BuyGoodsPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack() {
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
 
                     }
 
@@ -83,7 +83,7 @@ public class BuyGoodsPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean o, String status) {
+                    public void onResponse(CollectDeleteBean o, String status,Object page) {
                         buyGoodsContract.collectSuccess(o);
                     }
 
@@ -108,7 +108,7 @@ public class BuyGoodsPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<String,Object>() {
                     @Override
-                    public void onResponse(String str, String status) {
+                    public void onResponse(String str, String status,Object page) {
                         buyGoodsContract.exReChangeSuccess(str);
                     }
 

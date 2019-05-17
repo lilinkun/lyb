@@ -20,6 +20,7 @@ import com.lzyyd.lyb.entity.LoginBean;
 import com.lzyyd.lyb.entity.OrderBean;
 import com.lzyyd.lyb.entity.OrderDetailBean;
 import com.lzyyd.lyb.entity.OrderListBean;
+import com.lzyyd.lyb.entity.PageBean;
 import com.lzyyd.lyb.entity.PersonalInfoBean;
 import com.lzyyd.lyb.entity.ProvinceBean;
 import com.lzyyd.lyb.entity.ResultBean;
@@ -139,7 +140,7 @@ public interface RetrofitService {
 
     @FormUrlEncoded
     @POST("Api/")
-    Observable<ResultBean<ArrayList<CollectBean>,Object>> GoodCollectList(@FieldMap Map<String, String> params);
+    Observable<ResultBean<ArrayList<CollectBean>,PageBean>> GoodCollectList(@FieldMap Map<String, String> params);
 
     @FormUrlEncoded
     @POST("Api/")
@@ -147,7 +148,7 @@ public interface RetrofitService {
 
     @FormUrlEncoded
     @POST("Api/")
-    Observable<ResultBean<ArrayList<SelfGoodsBean>,Object>> getselfGoodList(@FieldMap Map<String, String> params);
+    Observable<ResultBean<ArrayList<SelfGoodsBean>,PageBean>> getselfGoodList(@FieldMap Map<String, String> params);
     @FormUrlEncoded
     @POST("Api/")
     Observable<ResultBean<ArrayList<String>,Object>> getselfSearch(@FieldMap Map<String, String> params);

@@ -75,7 +75,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<BuyBean,Object>() {
                     @Override
-                    public void onResponse(BuyBean rightNows, String status) {
+                    public void onResponse(BuyBean rightNows, String status,Object page) {
                         sureOrderContract.getRightNowBuySuccess(rightNows);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -109,7 +109,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<BuyBean,Object>() {
                     @Override
-                    public void onResponse(BuyBean rightNows, String status) {
+                    public void onResponse(BuyBean rightNows, String status,Object page) {
                         sureOrderContract.getRightNowBuySuccess(rightNows);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -155,7 +155,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<FareBean,Object>() {
                     @Override
-                    public void onResponse(FareBean fareBean, String status) {
+                    public void onResponse(FareBean fareBean, String status,Object page) {
                         sureOrderContract.getOrderGetFareSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -189,7 +189,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<ArrayList<FaresBean>,Object>() {
                     @Override
-                    public void onResponse(ArrayList<FaresBean> fareBean, String status) {
+                    public void onResponse(ArrayList<FaresBean> fareBean, String status,Object page) {
                         sureOrderContract.getOrderGetFaresSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -239,7 +239,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean fareBean, String status) {
+                    public void onResponse(CollectDeleteBean fareBean, String status,Object page) {
                         sureOrderContract.sureOrderSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -287,7 +287,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean fareBean, String status) {
+                    public void onResponse(CollectDeleteBean fareBean, String status,Object page) {
                         sureOrderContract.sureOrderSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -320,7 +320,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean fareBean, String status) {
+                    public void onResponse(CollectDeleteBean fareBean, String status,Object page) {
                         sureOrderContract.selfPaySuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -355,7 +355,7 @@ public class SureOrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<WxRechangeBean,Object>() {
                     @Override
-                    public void onResponse(WxRechangeBean fareBean, String status) {
+                    public void onResponse(WxRechangeBean fareBean, String status,Object page) {
                         sureOrderContract.wxInfoSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();

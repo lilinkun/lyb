@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:textColor="@color/pop_text_bg"
-            android:text="-0"/>
+            android:text="0"/>
 
     </RelativeLayout>
 

@@ -111,12 +111,12 @@ public class Category1Activity extends BaseActivity implements CategoryContract,
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        if (!ButtonUtils.isFastDoubleClick()) {
+//        if (!ButtonUtils.isFastDoubleClick()) {
             menuLeftAdapter.setSelectItem(position);
             menuLeftAdapter.notifyDataSetChanged();
             homeCategorys.clear();
             setGridview(position);
-        }
+//        }
     }
 
     private void setGridview(int position) {

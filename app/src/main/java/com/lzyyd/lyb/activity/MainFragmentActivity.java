@@ -285,6 +285,12 @@ public class MainFragmentActivity extends BaseActivity implements MainFragmentCo
                 if (EasyPermissions.hasPermissions(this, perms)) {
                     downNewApk();
                 }
+            }else if (requestCode == RC_PERMISSION_DELETE){
+                String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                if (EasyPermissions.hasPermissions(this, perms)) {
+                    // 删除之前升级时下载的老的 apk 文件
+                    BGAUpgradeUtil.deleteOldApk();
+                }
             }
         }
 
@@ -430,6 +436,7 @@ public class MainFragmentActivity extends BaseActivity implements MainFragmentCo
     public void onPageScrollStateChanged(int state) {
 
     }
+
 
 
 }

@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.lzyyd.lyb.R;
 import com.lzyyd.lyb.activity.AllOrderActivity;
+import com.lzyyd.lyb.activity.OrderListActivity;
 import com.lzyyd.lyb.activity.SelfGoodsTypeActivity;
 import com.lzyyd.lyb.adapter.SelfOrderAdapter;
 import com.lzyyd.lyb.base.BaseFragment;

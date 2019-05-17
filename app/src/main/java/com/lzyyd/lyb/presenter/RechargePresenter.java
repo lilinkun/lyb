@@ -67,7 +67,7 @@ public class RechargePresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<WxRechangeBean,Object>() {
                     @Override
-                    public void onResponse(WxRechangeBean fareBean, String status) {
+                    public void onResponse(WxRechangeBean fareBean, String status,Object page) {
                         rechargeContract.setReChargeSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -95,7 +95,7 @@ public class RechargePresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CountBean,Object>() {
                     @Override
-                    public void onResponse(CountBean countBean, String status) {
+                    public void onResponse(CountBean countBean, String status,Object page) {
                         rechargeContract.InfoAccountSuccess(countBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();

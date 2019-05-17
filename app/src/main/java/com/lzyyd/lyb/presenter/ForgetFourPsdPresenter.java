@@ -66,7 +66,7 @@ public class ForgetFourPsdPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack() {
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         forgetPasswordContract.onModifyPsdSuccess(o.toString());
                     }
 
@@ -94,7 +94,7 @@ public class ForgetFourPsdPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<LoginBean,Object>() {
                     @Override
-                    public void onResponse(LoginBean loginBean, String status) {
+                    public void onResponse(LoginBean loginBean, String status,Object page) {
                         forgetPasswordContract.onLoginSuccess(loginBean);
                     }
                     @Override

@@ -1,0 +1,234 @@
+[
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_sdk_title_layout.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\sdk_title_layout.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_web_bottom_layout.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\web_bottom_layout.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_history.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_history.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_orderlist.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_orderlist.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_orderlist.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_orderlist.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_kepler_simple_dialog_lay.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\kepler_simple_dialog_lay.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_selcet_more_normal.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_selcet_more_normal.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_serch.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_serch.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_sdk_title_layout.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\sdk_title_layout.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_btn_select_more.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_btn_select_more.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw_safe.jpg.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\raw\\safe.jpg"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_serch.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_serch.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_pressbar_color.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\pressbar_color.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_kepler_mid_lin.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\kepler_mid_lin.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_no_has_message.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_no_has_message.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_kepler_mid_lin.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\kepler_mid_lin.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_item_tab_layout.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\item_tab_layout.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_pressbar_color.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\pressbar_color.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_btn_select_more.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_btn_select_more.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw_safe.jpg.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\raw\\safe.jpg"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_selcet_more_normal.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_selcet_more_normal.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_sdk_title_bg_with_shadow.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\sdk_title_bg_with_shadow.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_btn_back.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_btn_back.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_dialog_button_ne.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_dialog_button_ne.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_select_bg.9.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\select_bg.9.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_white.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\white.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_neterror.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\neterror.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_kepler_simple_dialog_lay.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\kepler_simple_dialog_lay.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_more_select_item.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\more_select_item.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_back_normal.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_back_normal.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_has_message.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_has_message.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_back_normal.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_back_normal.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_history.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_history.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_neterror.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\neterror.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_btn_back.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_btn_back.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_has_message.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_has_message.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_neterror_layout.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\neterror_layout.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_selcet_more_pressed.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_selcet_more_pressed.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_dialog_bk.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_dialog_bk.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_item_tab_layout.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\item_tab_layout.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_selcet_more_pressed.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_selcet_more_pressed.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_white.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\white.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_more_select_item.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\more_select_item.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_back_pressed.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_back_pressed.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_select_bg.9.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\select_bg.9.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_logout.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_logout.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_no_has_message.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_no_has_message.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_seclect_item_logout.png.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\seclect_item_logout.png"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_web_bottom_layout.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\web_bottom_layout.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_dialog_button_ne.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_dialog_button_ne.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_dialog_button_po.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_dialog_button_po.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout_neterror_layout.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\layout\\neterror_layout.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4_kepler_back_pressed.png.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\kepler_back_pressed.png"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_btn_reload.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_reload.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_sdk_title_bg_with_shadow.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\sdk_title_bg_with_shadow.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_btn_reload.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\btn_reload.xml"
+    },
+    {
+        "merged": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_dialog_button_po.xml.flat",
+        "source": "D:\\android\\project\\lyb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_dialog_button_po.xml"
+    },
+    {
+        "merged": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable_kepler_dialog_bk.xml.flat",
+        "source": "D:\\chrome\\asKepler-injdnot_aweb\\jdsdk_lib\\build\\intermediates\\bundles\\debug\\res\\drawable\\kepler_dialog_bk.xml"
+    }
+]

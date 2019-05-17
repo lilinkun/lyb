@@ -43,6 +43,7 @@ public class SelfGoodFragment extends BaseFragment implements SelfGoodsContract,
     private SelfGoodsPresenter selfGoodsPresenter = new SelfGoodsPresenter();
     private SelfGoodsAdapter selfGoodsAdapter;
     private ArrayList<SelfGoodsBean> selfGoodsBeans;
+    private boolean isLoad = true;
 
     @Override
     public int getlayoutId() {
@@ -122,8 +123,9 @@ public class SelfGoodFragment extends BaseFragment implements SelfGoodsContract,
     }
 
     @Override
-    public void getDataSuccess(ArrayList<SelfGoodsBean> selfGoodsBeans) {
+    public void getDataSuccess(ArrayList<SelfGoodsBean> selfGoodsBeans,boolean load) {
         this.selfGoodsBeans = selfGoodsBeans;
+        this.isLoad = load;
         if (selfGoodsAdapter == null) {
             selfGoodsAdapter = new SelfGoodsAdapter(getActivity(), selfGoodsBeans,2);
             mSelfGoodsRv.setAdapter(selfGoodsAdapter);

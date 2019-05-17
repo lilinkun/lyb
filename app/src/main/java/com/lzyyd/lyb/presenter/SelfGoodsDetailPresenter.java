@@ -11,6 +11,7 @@ import com.lzyyd.lyb.entity.CollectBean;
 import com.lzyyd.lyb.entity.CollectDeleteBean;
 import com.lzyyd.lyb.entity.GoodsDetailBean;
 import com.lzyyd.lyb.entity.OrderListBean;
+import com.lzyyd.lyb.entity.PageBean;
 import com.lzyyd.lyb.entity.SelfGoodsBean;
 import com.lzyyd.lyb.http.callback.HttpResultCallBack;
 import com.lzyyd.lyb.manager.DataManager;
@@ -70,7 +71,7 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
         .subscribe(new HttpResultCallBack<GoodsDetailBean<ArrayList>, Object>() {
 
             @Override
-            public void onResponse(GoodsDetailBean<ArrayList> objectObjectGoodsDetailBean, String status) {
+            public void onResponse(GoodsDetailBean<ArrayList> objectObjectGoodsDetailBean, String status,Object page) {
                 selfGoodsDetailContract.getDataSuccess(objectObjectGoodsDetailBean);
                 if (progressDialog != null && progressDialog.isShowing()) {
                     progressDialog.dismiss();
@@ -101,7 +102,7 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<CollectBean, Object>() {
 
                     @Override
-                    public void onResponse(CollectBean collectBean, String status) {
+                    public void onResponse(CollectBean collectBean, String status,Object page) {
                         selfGoodsDetailContract.addCollectSuccess(collectBean);
                     }
 
@@ -129,7 +130,7 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<String, Object>() {
 
                     @Override
-                    public void onResponse(String collectBean, String status) {
+                    public void onResponse(String collectBean, String status,Object page) {
 //                        selfGoodsDetailContract.addCollectSuccess(collectBean);
                         selfGoodsDetailContract.isGoodsCollectSuccess(collectBean);
                     }
@@ -158,7 +159,7 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean collectBeans, String status) {
+                    public void onResponse(CollectDeleteBean collectBeans, String status,Object page) {
                         if (collectBeans.getStatus() == 0) {
                             selfGoodsDetailContract.deleteCollectSuccess(collectBeans.getMessage());
                         }
@@ -193,7 +194,7 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean collectBeans, String status) {
+                    public void onResponse(CollectDeleteBean collectBeans, String status,Object page) {
                         if (collectBeans.getStatus() == 0) {
                             selfGoodsDetailContract.addCartSuccess(collectBeans.getMessage());
                         }else {
@@ -228,9 +229,9 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
         mCompositeSubscription.add(manager.getselfGoodList(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new HttpResultCallBack<ArrayList<SelfGoodsBean>,Object>() {
+                .subscribe(new HttpResultCallBack<ArrayList<SelfGoodsBean>,PageBean>() {
                     @Override
-                    public void onResponse(ArrayList<SelfGoodsBean> selfGoodsBeans, String status) {
+                    public void onResponse(ArrayList<SelfGoodsBean> selfGoodsBeans, String status,PageBean page) {
                         selfGoodsDetailContract.getCommendGoodsSuccess(selfGoodsBeans);
                     }
 
@@ -261,7 +262,7 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<BuyBean,Object>() {
                     @Override
-                    public void onResponse(BuyBean rightNows, String status) {
+                    public void onResponse(BuyBean rightNows, String status,Object page) {
                         selfGoodsDetailContract.getRightNowBuySuccess(rightNows);
                     }
 
@@ -286,7 +287,7 @@ public class SelfGoodsDetailPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean collectDeleteBean, String status) {
+                    public void onResponse(CollectDeleteBean collectDeleteBean, String status,Object page) {
                         if (collectDeleteBean.getStatus() == 0) {
                             selfGoodsDetailContract.isAddressSuccess(collectDeleteBean.getMessage());
                         }else if (collectDeleteBean.getStatus() == 101){

@@ -68,7 +68,7 @@ public class OrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<ArrayList<OrderListBean<ArrayList<OrderBean>>>,Object>() {
                     @Override
-                    public void onResponse(ArrayList<OrderListBean<ArrayList<OrderBean>>> orderListBeans, String status) {
+                    public void onResponse(ArrayList<OrderListBean<ArrayList<OrderBean>>> orderListBeans, String status,Object page) {
                         orderContract.OrderListSuccess(orderListBeans);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -105,7 +105,7 @@ public class OrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean orderListBeans, String status) {
+                    public void onResponse(CollectDeleteBean orderListBeans, String status,Object page) {
                         orderContract.modifyOrderSuccess(orderListBeans,Num,view);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -139,7 +139,7 @@ public class OrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean b, String status) {
+                    public void onResponse(CollectDeleteBean b, String status,Object page) {
                         orderContract.deleteGoodsSuccess(b);
                     }
 
@@ -164,7 +164,7 @@ public class OrderPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
                     @Override
-                    public void onResponse(CollectDeleteBean collectDeleteBean, String status) {
+                    public void onResponse(CollectDeleteBean collectDeleteBean, String status,Object page) {
                         if (collectDeleteBean.getStatus() == 0) {
                             orderContract.isAddressSuccess(collectDeleteBean.getMessage());
                         }else if (collectDeleteBean.getStatus() == 101){

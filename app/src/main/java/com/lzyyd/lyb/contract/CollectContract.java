@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 
 public interface CollectContract extends IView {
-    public void getCollectDataSuccess(ArrayList<CollectBean> collectBeans);
+    public void getCollectDataSuccess(ArrayList<CollectBean> collectBeans,String pageCount);
     public void getCollectFail(String msg);
 
     public void deleteCollectSuccess(String msg);

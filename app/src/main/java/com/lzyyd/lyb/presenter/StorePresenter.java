@@ -65,7 +65,7 @@ public class StorePresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<ArrayList<SelfStoreBean>,Object>(){
 
                     @Override
-                    public void onResponse(ArrayList<SelfStoreBean> selfGoodsBeans, String status) {
+                    public void onResponse(ArrayList<SelfStoreBean> selfGoodsBeans, String status,Object page) {
                         storeContract.getDataSuccess(selfGoodsBeans);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();

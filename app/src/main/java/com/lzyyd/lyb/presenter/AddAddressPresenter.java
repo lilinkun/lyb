@@ -58,7 +58,7 @@ public class AddAddressPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<ArrayList<ProvinceBean>,Object>() {
                     @Override
-                    public void onResponse(ArrayList<ProvinceBean> provinceBeans, String status) {
+                    public void onResponse(ArrayList<ProvinceBean> provinceBeans, String status,Object page) {
                         addAddressContract.getDataSuccess(provinceBeans,localType);
                     }
 
@@ -88,7 +88,7 @@ public class AddAddressPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack() {
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         addAddressContract.getSaveSuccess();
                     }
 
@@ -122,7 +122,7 @@ public class AddAddressPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack() {
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         addAddressContract.modifySuccess();
                     }
 

@@ -67,7 +67,7 @@ public class CategoryPresenter extends BasePresenter {
         .subscribe(new HttpResultCallBack<ArrayList<CategoryListBean<ArrayList<Object>>>, Object>() {
 
             @Override
-            public void onResponse(ArrayList<CategoryListBean<ArrayList<Object>>> categoryListBeans, String status) {
+            public void onResponse(ArrayList<CategoryListBean<ArrayList<Object>>> categoryListBeans, String status,Object o) {
 
                 categoryContract.getDataSuccess(categoryListBeans);
                 /*if (homeHeadBeanCategoryListBean.get(0).getSubclass().size() > 0){

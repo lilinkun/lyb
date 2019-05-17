@@ -65,7 +65,7 @@ public class WebviewPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack() {
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         webviewContract.onDataSuccess(o.toString());
                     }
 

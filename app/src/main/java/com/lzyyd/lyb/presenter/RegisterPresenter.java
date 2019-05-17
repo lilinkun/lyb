@@ -68,7 +68,7 @@ public class RegisterPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack(){
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         registerContract.onSendVcodeSuccess();
                     }
 
@@ -109,7 +109,7 @@ public class RegisterPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack(){
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         registerContract.onRegisterSuccess();
                         progressDialog.show();
                     }
@@ -148,7 +148,7 @@ public class RegisterPresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack(){
 
                     @Override
-                    public void onResponse(Object o, String status) {
+                    public void onResponse(Object o, String status,Object page) {
                         registerContract.onRegisterSuccess();
                     }
 

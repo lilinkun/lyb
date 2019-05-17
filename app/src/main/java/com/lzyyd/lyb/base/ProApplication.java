@@ -2,6 +2,7 @@ package com.lzyyd.lyb.base;
 
 import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.kepler.jd.Listener.AsyncInitListener;
@@ -38,6 +39,7 @@ public class ProApplication extends Application{
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     /**

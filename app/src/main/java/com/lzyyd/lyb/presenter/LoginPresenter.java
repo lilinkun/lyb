@@ -82,7 +82,7 @@ public class LoginPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<LoginBean,Object>() {
                     @Override
-                    public void onResponse(LoginBean loginBean, String status) {
+                    public void onResponse(LoginBean loginBean, String status,Object page) {
                         mLoginView.onLoginSuccess(loginBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();
@@ -118,7 +118,7 @@ public class LoginPresenter extends BasePresenter {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new HttpResultCallBack<Boolean,Object>() {
                     @Override
-                    public void onResponse(Boolean aBoolean, String status) {
+                    public void onResponse(Boolean aBoolean, String status,Object page) {
                         mLoginView.isRegisterSuccess(aBoolean);
                     }
                     @Override

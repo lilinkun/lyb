@@ -78,12 +78,13 @@ public class SelfOrderAdapter extends RecyclerView.Adapter<SelfOrderAdapter.View
             holder.tv_exit_order.setVisibility(View.GONE);
             if (selfOrderBeans.get(position).getErm() != null  && selfOrderBeans.get(position).getErm().length() > 0) {
                 holder.tv_go_pay.setText("现场提货");
+            }else {
+                holder.tv_go_pay.setVisibility(View.GONE);
             }
 
         }else if (selfOrderBeans.get(position).getOrderStatus() == 0){
             holder.tv_exit_order.setVisibility(View.VISIBLE);
             holder.tv_go_pay.setVisibility(View.VISIBLE);
-
 
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:SS");
             Date date = new Date(System.currentTimeMillis());
