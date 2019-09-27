@@ -25,6 +25,7 @@
         android:icon="@mipmap/ic_launcher1"
         android:label="@string/app_name"
         android:name=".base.ProApplication"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.WelcomeActivity">
@@ -77,9 +78,15 @@
         <activity android:name=".activity.RushBuyActivity" />
         <activity android:name=".activity.JdGoodActivity" />
         <activity android:name=".activity.BuyJdGoodsActivity" />
+        <activity android:name=".activity.AboutAppActivity"/>
+        <activity android:name=".activity.PayActivity"/>
 
         <activity android:name=".wxapi.WXPayEntryActivity"
             android:theme="@android:style/Theme.Translucent"
+            android:exported="true"/>
+
+
+        <activity android:name=".wxapi.WXEntryActivity"
             android:exported="true"/>
 
         <service android:name="com.trycath.myupdateapklibrary.service.DownloadFileService" />

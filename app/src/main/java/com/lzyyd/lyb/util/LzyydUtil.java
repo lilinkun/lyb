@@ -6,6 +6,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.lzyyd.lyb.entity.LoginBean;
+import com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
@@ -33,7 +34,8 @@ public class LzyydUtil {
     public static  final String PAGE_COUNT = "20";
 
 //    public static final String APP_ID = "wx7b154709878a1cbe";
-    public static final String APP_ID = "wx3686dfb825618610";
+//    public static final String APP_ID = "wx3686dfb825618610";
+    public static final String APP_ID = "wx27fb4ad747521493";
 
 
     public static final int GOODS_ALL_WEAR = 3756;
@@ -50,6 +52,9 @@ public class LzyydUtil {
 
     public static final String TYPEID = "TYPEID";
     public static final String LOGIN = "login";
+    public static final String ORDERID = "orderid";
+    public static final String ORDERAMOUNT = "orderamount";
+    public static final String WHERE = "where";
 
     public static String RESULT_SUCCESS = "success";
     public static String RESULT_FAIL = "fail";
@@ -162,6 +167,16 @@ public class LzyydUtil {
             Log.e("PAY_GET", "异常：" + e.getMessage());
             Toast.makeText(context, "异常：" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public static void wxProgramPay(String appid,Context context,String page){
+        IWXAPI api = WXAPIFactory.createWXAPI(context, appid);
+        WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
+        req.userName = "gh_236e7c5bd9d8";
+        req.path = page;
+        req.miniprogramType = WXLaunchMiniProgram.Req.MINIPROGRAM_TYPE_TEST;
+        api.sendReq(req);
+
     }
 
     public static String getCurDate(){

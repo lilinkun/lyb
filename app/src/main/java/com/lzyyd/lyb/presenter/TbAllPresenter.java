@@ -68,10 +68,9 @@ public class TbAllPresenter extends BasePresenter {
         if (q.equals("文体车品")){
             q = "汽车";
         }
-        if (q.equals("全部")){
+        /*if (q.equals("全部")){
             q = " ";
-            params.put("cat","全部");
-        }
+        }*/
         params.put("q",q);
         params.put("is_tmall",isMall);
 

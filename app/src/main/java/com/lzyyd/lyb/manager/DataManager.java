@@ -406,6 +406,12 @@ public class DataManager {
     public Observable<ResultBean<WxRechangeBean,Object>> wxPay(HashMap<String,String> mHashMap){
         return mRetrofitService.wxPay(mHashMap);
     }
+    /**
+     * 微信支付1
+     */
+    public Observable<ResultBean<CollectDeleteBean,Object>> wxPay1(HashMap<String,String> mHashMap){
+        return mRetrofitService.wxPay1(mHashMap);
+    }
 
     /**
      * 确认收货

@@ -53,7 +53,6 @@ import static com.lzyyd.lyb.util.LzyydUtil.PAGE_COUNT;
 /**
  * Created by LG on 2018/11/21.
  */
-
 public class SearchActivity extends BaseActivity implements SelfSearchContract, TbHotGoodsAdapter.OnItemClickListener, TbAdapter.OnItemClickListener {
 
     @BindView(R.id.et_search)

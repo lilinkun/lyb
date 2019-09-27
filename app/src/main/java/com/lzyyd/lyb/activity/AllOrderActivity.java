@@ -3,6 +3,7 @@ package com.lzyyd.lyb.activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -317,7 +318,12 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
 
     @Override
     public void InfoAccountSuccess(CountBean orderDetailBean) {
-        showPopup(orderDetailBean);
+//        showPopup(orderDetailBean);
+
+        Bundle bundle = new Bundle();
+        bundle.putString(LzyydUtil.ORDERID,orderSn+"");
+        bundle.putString(LzyydUtil.WHERE,"order");
+        UiHelper.launcherForResultBundle(AllOrderActivity.this,PayActivity.class,0x1231,bundle);
     }
 
     @Override
@@ -464,6 +470,8 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
                     payPopupWindow.dismiss();
 //                    toast("你瞅我干啥，暂时不能微信支付类");
                     allOrderPresenter.setWxPay(orderDetailBean.getOrder_sn(),order_amount+"","29","1","Android","com.lzyyd.lyb",ProApplication.SESSIONID(AllOrderActivity.this));
+
+
                 }else {
                     toast("请选择支付方式");
                 }

@@ -26,6 +26,7 @@
 
     <color name="black_bg">#181818</color>
     <color name="member_bg">#FFD28A</color>
+    <color name="pay_text">#555555</color>
 
     <color name="home_text_bg">#FF3D21</color>
     <color name="search_edittext_bg">#CCCCCC</color>

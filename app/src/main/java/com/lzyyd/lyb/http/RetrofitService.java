@@ -203,6 +203,10 @@ public interface RetrofitService {
 
     @FormUrlEncoded
     @POST("Api/")
+    Observable<ResultBean<CollectDeleteBean,Object>> wxPay1(@FieldMap Map<String, String> params);
+
+    @FormUrlEncoded
+    @POST("Api/")
     Observable<ResultBean<CollectDeleteBean,Object>> sureReceipt(@FieldMap Map<String, String> params);
 
     @FormUrlEncoded

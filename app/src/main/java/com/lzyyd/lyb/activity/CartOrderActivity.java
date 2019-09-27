@@ -184,6 +184,10 @@ public class CartOrderActivity extends BaseActivity implements SureOrderContract
                         } else {
                             sureOrderPresenter.setWxPay(orderid, total + "", "29", "1", "Android", "com.lzyyd.lyb", ProApplication.SESSIONID(this));
                         }
+                        /*Bundle bundle = new Bundle();
+                        bundle.putString(LzyydUtil.ORDERID,orderSn+"");
+                        bundle.putString(LzyydUtil.WHERE,"order");
+                        UiHelper.launcherForResultBundle(CartOrderActivity.this,PayActivity.class,0x1231,bundle);*/
                     }
 
                     break;

@@ -1,10 +1,8 @@
 package com.lzyyd.lyb.activity;
 
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.util.SparseArray;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -12,24 +10,17 @@ import com.lzyyd.lyb.R;
 import com.lzyyd.lyb.adapter.FragmentsAdapter;
 import com.lzyyd.lyb.base.BaseActivity;
 import com.lzyyd.lyb.base.BaseFragment;
-import com.lzyyd.lyb.contract.RushBuyContract;
-import com.lzyyd.lyb.fragment.HomeFragment;
-import com.lzyyd.lyb.fragment.MeFragment;
 import com.lzyyd.lyb.fragment.PanicBuiedFragment;
 import com.lzyyd.lyb.fragment.PanicBuyingFragment;
-import com.lzyyd.lyb.presenter.RushBuyPresenter;
 import com.lzyyd.lyb.util.Eyes;
-import com.lzyyd.lyb.util.LzyydUtil;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
+ * 立即抢购
  * Created by LG on 2019/1/2.
- */
-
+*/
 public class RushBuyActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     @BindView(R.id.vp_rushbuy)

@@ -181,7 +181,8 @@ public class AllOrderPresenter extends BasePresenter {
                     }
                 }));
     }
-/**
+
+    /**
      * 收货订单
      */
     public void deleteOrder(String OrderId,String SessionId){
@@ -204,6 +205,10 @@ public class AllOrderPresenter extends BasePresenter {
                         allOrderContract.sureReceiptFail(msg);
                     }
                 }));
+    }
+
+    public void setWxProgramPay(){
+
     }
 
 

@@ -1,6 +1,5 @@
 package com.lzyyd.lyb.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 
 import com.lzyyd.lyb.R;
 import com.lzyyd.lyb.adapter.GetPagerAdapter;
-import com.lzyyd.lyb.adapter.RecordAdapter;
 import com.lzyyd.lyb.adapter.SelfGoodsAdapter;
 import com.lzyyd.lyb.base.BaseActivity;
 import com.lzyyd.lyb.base.BaseFragment;
@@ -25,9 +23,7 @@ import com.lzyyd.lyb.entity.HomeCategoryBean;
 import com.lzyyd.lyb.entity.SelfGoodsBean;
 import com.lzyyd.lyb.entity.TBbean;
 import com.lzyyd.lyb.fragment.SelfGoodFragment;
-import com.lzyyd.lyb.interf.OnTitleBarClickListener;
 import com.lzyyd.lyb.presenter.SelfGoodsPresenter;
-import com.lzyyd.lyb.ui.CustomTitleBar;
 import com.lzyyd.lyb.ui.GridSpacingItemDecoration;
 import com.lzyyd.lyb.util.ActivityUtil;
 import com.lzyyd.lyb.util.ButtonUtils;
@@ -151,7 +147,7 @@ public class SelfGoodsTypeActivity extends BaseActivity implements SelfGoodsCont
         textViewList.add(mTvPople);
         textViewList.add(mTvTop);
 
-//        selfGoodsPresenter.getGoodList("1","20",homeCategoryBean.getCat_id(),"add_time", ProApplication.SESSIONID(this));
+        //selfGoodsPresenter.getGoodList("1","20",homeCategoryBean.getCat_id(),"add_time", ProApplication.SESSIONID(this));
         selfGoodsPresenter.getGoodList(PAGE_INDEX+"",PAGE_COUNT,catid,SortField,SortType,goodsname, ProApplication.SESSIONID(this));
 
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

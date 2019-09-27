@@ -80,13 +80,18 @@ public class TbGoodsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             if (tbDisCountBean.getCouponInfo().contains("减") && tbDisCountBean.getCouponInfo().contains("元") ) {
                 CouponAmount = tbDisCountBean.getCouponInfo().substring(tbDisCountBean.getCouponInfo().indexOf("减") + 1, tbDisCountBean.getCouponInfo().lastIndexOf("元"));
             }else {
-                if (tbDisCountBean.getCouponInfo() != null) {
+                if (tbDisCountBean.getCouponInfo() != null && !tbDisCountBean.getCouponInfo().equals("")) {
                     CouponAmount = tbDisCountBean.getCouponInfo();
                 }
             }
             tbDisCountBean.setCouponInfo(CouponAmount);
 
-            BigDecimal zkFinalPrice = new BigDecimal(tbDisCountBean.getZkFinalPrice());
+            String ZkFinalPrice = tbDisCountBean.getZkFinalPrice();
+            if (ZkFinalPrice.equals("")){
+                ZkFinalPrice = "0";
+            }
+            BigDecimal zkFinalPrice = new BigDecimal(ZkFinalPrice);
+
             BigDecimal couponInfo = new BigDecimal(CouponAmount);
             double couponPrice = zkFinalPrice.subtract(couponInfo).doubleValue();
             String price = String.valueOf(couponPrice);

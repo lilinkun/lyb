@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.lzyyd.lyb.ui.CustomTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text_title="关于绿韵宝"
+        app:img_left="@mipmap/ic_back"
+        ></com.lzyyd.lyb.ui.CustomTitleBar>
+
+    <ImageView
+        android:id="@+id/iv_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:src="@mipmap/ic_launcher1"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_launcher"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_centerHorizontal="true"
+        android:text="版本: 1.30"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="湖南绿之韵健康科技发展有限公司  版权所有"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_20"/>
+</RelativeLayout>

@@ -71,6 +71,7 @@
     <string name="setting_update">在线升级</string>
     <string name="setting_delete_cache">清除缓存</string>
     <string name="setting_exit_login">退出登录</string>
+    <string name="setting_about">关于app</string>
     
     <!--我的-->
     <string name="me_balance">余额</string>

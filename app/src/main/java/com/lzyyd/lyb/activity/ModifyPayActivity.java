@@ -12,7 +12,6 @@ import com.lzyyd.lyb.base.ProApplication;
 import com.lzyyd.lyb.contract.ModifyPayPsdContract;
 import com.lzyyd.lyb.entity.LoginBean;
 import com.lzyyd.lyb.presenter.ModifyPayPsdPresenter;
-import com.lzyyd.lyb.ui.CustomRegisterLayout;
 import com.lzyyd.lyb.ui.CustomTitleBar;
 import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;

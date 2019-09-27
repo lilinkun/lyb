@@ -14,9 +14,9 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
+ * 我的推荐
  * Created by LG on 2018/11/21.
  */
-
 public class RecommendActivity extends BaseActivity implements OnTitleBarClickListener {
 
     @BindView(R.id.titlebar)

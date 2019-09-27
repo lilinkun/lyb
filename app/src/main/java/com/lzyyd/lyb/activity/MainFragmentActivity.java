@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.lzyyd.lyb.R;
 import com.lzyyd.lyb.adapter.FragmentsAdapter;
 import com.lzyyd.lyb.adapter.MyShoppingCarAdapter;
@@ -187,6 +188,7 @@ public class MainFragmentActivity extends BaseActivity implements MainFragmentCo
                         }
                     }
                 });
+
 
     }
 

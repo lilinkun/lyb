@@ -127,7 +127,7 @@ public class SettingActivity extends BaseActivity implements OnTitleBarClickList
         return super.onKeyDown(keyCode, event);
     }
 
-    @OnClick({R.id.rl_personal_info,R.id.rl_modify_psd,R.id.ll_loginout,R.id.rl_modify_pay_psd,R.id.rl_clear,R.id.rl_update})
+    @OnClick({R.id.rl_personal_info,R.id.rl_modify_psd,R.id.ll_loginout,R.id.rl_modify_pay_psd,R.id.rl_clear,R.id.rl_update,R.id.rl_app_info})
     public void onClick(View view){
         switch (view.getId()){
             case R.id.rl_personal_info:
@@ -223,6 +223,13 @@ public class SettingActivity extends BaseActivity implements OnTitleBarClickList
 
 
 //                settingPresenter.update(ProApplication.SESSIONID(this));
+                break;
+
+            case R.id.rl_app_info:
+
+                UiHelper.launcher(this,AboutAppActivity.class);
+
+
                 break;
         }
     }
