@@ -50,12 +50,6 @@ public class WXEntryActivity extends AppCompatActivity implements IWXAPIEventHan
             Toast.makeText(this,extraData,Toast.LENGTH_LONG).show();
         }
 
-        if (baseResp.errCode == 0) {
-            Toast.makeText(this,"失败",Toast.LENGTH_LONG).show();
-
-        }else if (baseResp.errCode == 1){
-            Toast.makeText(this,"成功",Toast.LENGTH_LONG).show();
-        }
     }
 
 

@@ -254,7 +254,7 @@ public class PayActivity extends BaseActivity implements PayContract, IWxResultL
     @Override
     public void wxInfoSuccess(CollectDeleteBean wxRechangeBean) {
 //        do_WX("pages/index/index");
-        do_WX("pages/Payment/Payment?Bill_No="+wxRechangeBean.getMessage() + "&SessionId=" + ProApplication.SESSIONID(this));
+        do_WX("pages/Payment/Payment?Bill_No="+wxRechangeBean.getMessage() + "&SessionId=" + ProApplication.SESSIONID(this) + "&send=123");
     }
 
     @Override
