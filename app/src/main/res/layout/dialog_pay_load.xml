@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否已经完成支付?"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/tv_pay_fail"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingLeft="@dimen/padding_10"
+        android:paddingRight="@dimen/padding_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:text="支付失败"/>
+
+
+     <TextView
+         android:id="@+id/tv_pay_success"
+         android:layout_width="wrap_content"
+         android:layout_height="match_parent"
+         android:gravity="center"
+         android:paddingLeft="@dimen/padding_10"
+         android:paddingRight="@dimen/padding_10"
+         android:layout_marginLeft="@dimen/margin_10"
+         android:text="支付成功"/>
+
+    </LinearLayout>
+</LinearLayout>

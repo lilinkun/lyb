@@ -20,9 +20,11 @@ import com.lzyyd.lyb.R;
 import com.lzyyd.lyb.base.BaseActivity;
 import com.lzyyd.lyb.base.ProApplication;
 import com.lzyyd.lyb.contract.RechargeContract;
+import com.lzyyd.lyb.entity.CollectDeleteBean;
 import com.lzyyd.lyb.entity.CountBean;
 import com.lzyyd.lyb.entity.WxInfoBean;
 import com.lzyyd.lyb.entity.WxRechangeBean;
+import com.lzyyd.lyb.interf.IWxLoginListener;
 import com.lzyyd.lyb.interf.IWxResultListener;
 import com.lzyyd.lyb.interf.OnTitleBarClickListener;
 import com.lzyyd.lyb.presenter.RechargePresenter;
@@ -31,6 +33,7 @@ import com.lzyyd.lyb.ui.RoundImageView;
 import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;
 import com.lzyyd.lyb.util.SoftKeyboardUtil;
+import com.lzyyd.lyb.wxapi.WXEntryActivity;
 import com.lzyyd.lyb.wxapi.WXPayEntryActivity;
 import com.squareup.picasso.Picasso;
 import com.tencent.mm.opensdk.modelpay.PayReq;
@@ -47,7 +50,7 @@ import butterknife.OnClick;
  * Created by LG on 2018/11/21.
  */
 
-public class RechargeActivity extends BaseActivity implements OnTitleBarClickListener ,RechargeContract, IWxResultListener {
+public class RechargeActivity extends BaseActivity implements OnTitleBarClickListener, RechargeContract,IWxLoginListener {
 
     @BindView(R.id.titlebar)
     CustomTitleBar customTitleBar;
@@ -92,7 +95,7 @@ public class RechargeActivity extends BaseActivity implements OnTitleBarClickLis
         rechargePresenter.attachView(this);
         rechargePresenter.onCreate(this);
 
-        WXPayEntryActivity.setPayListener(this);
+        WXEntryActivity.setLoginListener(this);
         /*final File file = new File(getExternalCacheDir(), "crop.jpg");
         if (file.exists()) {
             Bitmap bm = BitmapFactory.decodeFile(file.getAbsolutePath());
@@ -133,7 +136,7 @@ public class RechargeActivity extends BaseActivity implements OnTitleBarClickLis
             case R.id.recharge_commit:
 
                 if (!et_amount.getText().toString().trim().isEmpty() && Integer.valueOf(et_amount.getText().toString()) > 0) {
-                    rechargePresenter.setWxPay("", et_amount.getText().toString(),"29","0","Android","com.lzyyd.lyb", ProApplication.SESSIONID(this));
+                    rechargePresenter.setWxPay1("", et_amount.getText().toString(),"29","0","Android","com.lzyyd.lyb", ProApplication.SESSIONID(this));
                 }
 
                 break;
@@ -204,10 +207,15 @@ public class RechargeActivity extends BaseActivity implements OnTitleBarClickLis
     }
 
     @Override
+    public void setReChargeSuccess(CollectDeleteBean wxRechangeBean) {
+        String orderSn = wxRechangeBean.getMessage();
+        LzyydUtil.wxProgramPay(LzyydUtil.APP_ID,this,"pages/Payment/Payment?Bill_No="+orderSn + "&SessionId=" + ProApplication.SESSIONID(this) + "&send=234");
+    }
+    /*@Override
     public void setReChargeSuccess(WxRechangeBean wxRechangeBean) {
         WxInfoBean wxInfoBean = wxRechangeBean.getData();
         LzyydUtil.wxPay(wxInfoBean.getAppid(),wxInfoBean.getPartnerid(),wxInfoBean.getPrepayid(),wxInfoBean.getNoncestr(),wxInfoBean.getTimestamp(),wxInfoBean.getSign(),this);
-    }
+    }*/
 
 
 
@@ -237,13 +245,13 @@ public class RechargeActivity extends BaseActivity implements OnTitleBarClickLis
     }
 
     @Override
-    public void setWxSuccess() {
+    public void setWxLoginSuccess(String wxSuccess) {
         toast("充值成功");
         rechargePresenter.getOrderData(ProApplication.SESSIONID(this));
     }
 
     @Override
-    public void setWxFail() {
+    public void setWxLoginFail(String msg) {
         toast("充值失败");
     }
 }

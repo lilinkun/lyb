@@ -293,7 +293,13 @@ public class OrderActivity extends BaseActivity implements SureOrderContract, Or
     @Override
     public void sureOrderSuccess(CollectDeleteBean collectDeleteBean) {
 
-        if (!tv_place_order.isClickable()){
+
+        Bundle bundle = new Bundle();
+        bundle.putString(LzyydUtil.ORDERID,collectDeleteBean.getMessage()+"");
+        bundle.putString(LzyydUtil.WHERE,"order");
+        UiHelper.launcherForResultBundle(OrderActivity.this,PayActivity.class,0x1231,bundle);
+        finish();
+        /*if (!tv_place_order.isClickable()){
             tv_place_order.setClickable(true);
         }
         if (collectDeleteBean.getStatus() == 0){
@@ -342,7 +348,7 @@ public class OrderActivity extends BaseActivity implements SureOrderContract, Or
 
         }else {
             toast("购买失败" + collectDeleteBean.getMessage());
-        }
+        }*/
     }
 
     @Override

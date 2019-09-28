@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.design.widget.TabLayout;
@@ -55,6 +56,7 @@ import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;
 import com.lzyyd.lyb.util.QRCodeUtil;
 import com.lzyyd.lyb.util.UToast;
+import com.lzyyd.lyb.util.UiHelper;
 import com.lzyyd.lyb.wxapi.WXPayEntryActivity;
 
 import java.text.ParseException;
@@ -277,7 +279,14 @@ public class OrderListActivity extends BaseActivity implements IPayOrderClickLis
     @Override
     public void payMode(SelfOrderBean selfOrderBean, int mode) {
         this.selfOrderBean = selfOrderBean;
-        orderListPresenter.getOrderData(ProApplication.SESSIONID(this));
+
+
+        Bundle bundle = new Bundle();
+        bundle.putString(LzyydUtil.ORDERID,selfOrderBean.getOrderSn()+"");
+        bundle.putString(LzyydUtil.WHERE,"order");
+        UiHelper.launcherForResultBundle(OrderListActivity.this,PayActivity.class,0x1231,bundle);
+
+//        orderListPresenter.getOrderData(ProApplication.SESSIONID(this));
     }
 
     @Override
@@ -581,6 +590,7 @@ public class OrderListActivity extends BaseActivity implements IPayOrderClickLis
                 allOrderFragment.setData();
                 waitPayFragment.setData();
                 completedOrderFragment.setData();
+            }else if (requestCode == 0x1231){
             }
         }
     }

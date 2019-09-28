@@ -4,14 +4,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 
 import com.lzyyd.lyb.contract.RechargeContract;
-import com.lzyyd.lyb.entity.CollectBean;
+import com.lzyyd.lyb.entity.CollectDeleteBean;
 import com.lzyyd.lyb.entity.CountBean;
 import com.lzyyd.lyb.entity.WxRechangeBean;
 import com.lzyyd.lyb.http.callback.HttpResultCallBack;
 import com.lzyyd.lyb.manager.DataManager;
 import com.lzyyd.lyb.mvp.IView;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import rx.android.schedulers.AndroidSchedulers;
@@ -50,7 +49,7 @@ public class RechargePresenter extends BasePresenter {
         rechargeContract = (RechargeContract) view;
     }
 
-    public void setWxPay(String Batch_No,String Charge_Amt,String Logo_ID,String Charge_Type,String apptype,String apppackage,String SessionId){
+    /*public void setWxPay(String Batch_No,String Charge_Amt,String Logo_ID,String Charge_Type,String apptype,String apppackage,String SessionId){
         final ProgressDialog progressDialog = ProgressDialog.show(mContext,"请稍等...","微信支付中...",true);
         HashMap<String, String> params = new HashMap<>();
         params.put("cls","BankCharge");
@@ -68,6 +67,40 @@ public class RechargePresenter extends BasePresenter {
                 .subscribe(new HttpResultCallBack<WxRechangeBean,Object>() {
                     @Override
                     public void onResponse(WxRechangeBean fareBean, String status,Object page) {
+                        rechargeContract.setReChargeSuccess(fareBean);
+                        if (progressDialog != null && progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
+                    }
+
+                    @Override
+                    public void onErr(String msg, String status) {
+                        rechargeContract.setReChargeFail(msg);
+                        if (progressDialog != null && progressDialog.isShowing()) {
+                            progressDialog.dismiss();
+                        }
+                    }
+                }));
+    }*/
+
+    public void setWxPay1(String Batch_No,String Charge_Amt,String Logo_ID,String Charge_Type,String apptype,String apppackage,String SessionId){
+        final ProgressDialog progressDialog = ProgressDialog.show(mContext,"请稍等...","微信支付中...",true);
+        HashMap<String, String> params = new HashMap<>();
+        params.put("cls","BankCharge");
+        params.put("fun","BankChargeRecharge");
+        params.put("Batch_No",Batch_No);
+        params.put("Charge_Amt",Charge_Amt);
+        params.put("Logo_ID",Logo_ID);
+        params.put("Charge_Type",Charge_Type);
+        params.put("apptype",apptype);
+        params.put("apppackage",apppackage);
+        params.put("SessionId",SessionId);
+        mCompositeSubscription.add(manager.wxPay1(params)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new HttpResultCallBack<CollectDeleteBean,Object>() {
+                    @Override
+                    public void onResponse(CollectDeleteBean fareBean, String status,Object page) {
                         rechargeContract.setReChargeSuccess(fareBean);
                         if (progressDialog != null && progressDialog.isShowing()) {
                             progressDialog.dismiss();

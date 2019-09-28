@@ -184,10 +184,7 @@ public class CartOrderActivity extends BaseActivity implements SureOrderContract
                         } else {
                             sureOrderPresenter.setWxPay(orderid, total + "", "29", "1", "Android", "com.lzyyd.lyb", ProApplication.SESSIONID(this));
                         }
-                        /*Bundle bundle = new Bundle();
-                        bundle.putString(LzyydUtil.ORDERID,orderSn+"");
-                        bundle.putString(LzyydUtil.WHERE,"order");
-                        UiHelper.launcherForResultBundle(CartOrderActivity.this,PayActivity.class,0x1231,bundle);*/
+
                     }
 
                     break;
@@ -320,8 +317,11 @@ public class CartOrderActivity extends BaseActivity implements SureOrderContract
     public void sureOrderSuccess(CollectDeleteBean collectDeleteBean) {
 
         if (collectDeleteBean.getStatus() == 0) {
-
-            orderid = collectDeleteBean.getMessage();
+            Bundle bundle = new Bundle();
+            bundle.putString(LzyydUtil.ORDERID,collectDeleteBean.getMessage()+"");
+            bundle.putString(LzyydUtil.WHERE,"order");
+            UiHelper.launcherForResultBundle(CartOrderActivity.this,PayActivity.class,0x1231,bundle);
+            /*orderid = collectDeleteBean.getMessage();
 
             if (check_wx.isChecked()) {
                 isWxPay = true;
@@ -364,7 +364,7 @@ public class CartOrderActivity extends BaseActivity implements SureOrderContract
                     }
                 });
 
-            }
+            }*/
         } else {
             toast(collectDeleteBean.getMessage());
         }

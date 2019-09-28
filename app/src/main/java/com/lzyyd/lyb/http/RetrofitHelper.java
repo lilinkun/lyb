@@ -29,9 +29,9 @@ public class RetrofitHelper {
     //    public static final String BASE_URL = "http://192.168.0.142:8080/FirstWebProject/servlet/";
 //        public static final String BASE_URL = "http://oa.lzyyd.com:81/api/WebService/";
 //        public static final String BASE_URL = "http://lyb.mmibb.net:98/api/WebService/";
-//        public static final String BASE_URL = "http://api.boos999.com/api/WebService/";
+        public static final String BASE_URL = "http://api.boos999.com/api/WebService/";
 //        public static final String BASE_URL = "http://192.168.0.128:66/api/WebService/";
-        public static final String BASE_URL = "http://192.168.0.167:66/api/WebService/";
+//        public static final String BASE_URL = "http://192.168.0.167:66/api/WebService/";
 //        public static final String BASE_URL = "http://192.168.0.167:81/api/WebService/";
 
     //    public static final String ImageUrl = "http://lyb.mmibb.net:98/api/ClearImg/Upload";

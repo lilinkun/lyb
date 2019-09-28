@@ -23,12 +23,14 @@ import com.lzyyd.lyb.entity.CollectDeleteBean;
 import com.lzyyd.lyb.entity.OrderDetailBean;
 import com.lzyyd.lyb.entity.PersonalInfoBean;
 import com.lzyyd.lyb.entity.WxRechangeBean;
+import com.lzyyd.lyb.interf.IWxLoginListener;
 import com.lzyyd.lyb.interf.IWxResultListener;
 import com.lzyyd.lyb.presenter.PayPresenter;
 import com.lzyyd.lyb.ui.CustomTitleBar;
 import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;
 import com.lzyyd.lyb.util.UiHelper;
+import com.lzyyd.lyb.wxapi.WXEntryActivity;
 import com.lzyyd.lyb.wxapi.WXPayEntryActivity;
 
 import java.text.NumberFormat;
@@ -40,7 +42,7 @@ import butterknife.OnClick;
 /**
  * Created by LG on 2019/9/27.
  */
-public class PayActivity extends BaseActivity implements PayContract, IWxResultListener {
+public class PayActivity extends BaseActivity implements PayContract, IWxLoginListener {
     private PayPresenter payPresenter = new PayPresenter();
 
     private String orderid;
@@ -87,7 +89,7 @@ public class PayActivity extends BaseActivity implements PayContract, IWxResultL
         payPresenter.attachView(this);
         payPresenter.onCreate(this);
 
-        WXPayEntryActivity.setPayListener(this);
+        WXEntryActivity.setLoginListener(this);
 
         Bundle bundle = getIntent().getBundleExtra(LzyydUtil.TYPEID);
 
@@ -191,7 +193,8 @@ public class PayActivity extends BaseActivity implements PayContract, IWxResultL
 
 
     public void do_WX(String paramString) {
-        LzyydUtil.wxProgramPay("wx27fb4ad747521493",this,paramString);
+        loadDialog();
+        LzyydUtil.wxProgramPay(LzyydUtil.APP_ID,this,paramString);
     }
 
 
@@ -281,25 +284,6 @@ public class PayActivity extends BaseActivity implements PayContract, IWxResultL
     }
 
     @Override
-    public void setWxSuccess() {
-//        Bundle bundle = new Bundle();
-//        bundle.putString(WlmUtil.PRICE,totalPrice);
-//        bundle.putString(WlmUtil.ORDERID,orderid);
-//        UiHelper.launcherForResultBundle(this,PayResultActivity.class,0x0987,bundle);
-    }
-
-    @Override
-    public void setWxFail() {
-        toast("支付失败");
-        Bundle bundle = new Bundle();
-        bundle.putInt("status", 0);
-        bundle.putString("order_sn", orderid);
-        UiHelper.launcherForResultBundle(this, AllOrderActivity.class, 0x0987, bundle);
-        setResult(RESULT_OK);
-        finish();
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == 0x0987){
             setResult(RESULT_OK);
@@ -317,4 +301,47 @@ public class PayActivity extends BaseActivity implements PayContract, IWxResultL
 
     }
 
+    @Override
+    public void setWxLoginSuccess(String wxSuccess) {
+        Bundle bundle = new Bundle();
+        bundle.putString("price",totalPrice+"");
+        UiHelper.launcherForResultBundle(this,PayResultActivity.class,0x0987,bundle);
+    }
+
+    @Override
+    public void setWxLoginFail(String msg) {
+
+        toast("支付失败");
+        Bundle bundle = new Bundle();
+        bundle.putInt("status", 0);
+        bundle.putString("order_sn", orderid);
+        UiHelper.launcherForResultBundle(this, AllOrderActivity.class, 0x0987, bundle);
+        setResult(RESULT_OK);
+        finish();
+    }
+
+    private void loadDialog(){
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_pay_load,null);
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(view);
+
+        TextView tv_pay_success = (TextView) view.findViewById(R.id.tv_pay_success);
+        TextView tv_pay_fail = (TextView) view.findViewById(R.id.tv_pay_fail);
+        tv_pay_success.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("price",totalPrice+"");
+                UiHelper.launcherForResultBundle(PayActivity.this,PayResultActivity.class,0x0987,bundle);
+            }
+        });
+        tv_pay_fail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
 }
