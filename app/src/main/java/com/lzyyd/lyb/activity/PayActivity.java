@@ -239,7 +239,7 @@ public class PayActivity extends BaseActivity implements PayContract, IWxLoginLi
         orderDetailBean = orderDetailBeans.get(0);
 
         orderSn = orderDetailBeans.get(0).getOrder_sn();
-        totalPrice = orderDetailBeans.get(0).getOrder_amount();
+        totalPrice = orderDetailBeans.get(0).getMoney_payid();
         isOrder = true;
         setCheck();
         tv_amount.setText(totalPrice+"");

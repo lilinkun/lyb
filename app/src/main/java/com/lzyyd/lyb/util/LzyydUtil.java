@@ -174,7 +174,7 @@ public class LzyydUtil {
         WXLaunchMiniProgram.Req req = new WXLaunchMiniProgram.Req();
         req.userName = "gh_236e7c5bd9d8";
         req.path = page;
-        req.miniprogramType = WXLaunchMiniProgram.Req.MINIPROGRAM_TYPE_TEST;
+        req.miniprogramType = WXLaunchMiniProgram.Req.MINIPTOGRAM_TYPE_RELEASE;
         api.sendReq(req);
 
     }
