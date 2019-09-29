@@ -47,11 +47,14 @@ public class WXEntryActivity extends AppCompatActivity implements IWXAPIEventHan
         if (baseResp.getType() == ConstantsAPI.COMMAND_LAUNCH_WX_MINIPROGRAM){
             WXLaunchMiniProgram.Resp launchMiniProResp = (WXLaunchMiniProgram.Resp) baseResp;
             String extraData =launchMiniProResp.extMsg; //对应小程序组件 <button open-type="launchApp"> 中的 app-parameter 属性
-            Toast.makeText(this,extraData,Toast.LENGTH_LONG).show();
-            if (extraData.substring(extraData.indexOf("code=")).equals("0")){
-                iWxResult.setWxLoginFail("");
-            }else {
+            String str = extraData.substring(extraData.length()-1);
+            if (extraData.substring(extraData.length()-1).equals("1")){
                 iWxResult.setWxLoginSuccess("");
+                Toast.makeText(this,"支付成功",Toast.LENGTH_LONG).show();
+                finish();
+            }else {
+                iWxResult.setWxLoginFail("支付失败");
+                finish();
             }
         }
 

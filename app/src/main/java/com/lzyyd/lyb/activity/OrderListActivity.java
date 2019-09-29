@@ -591,6 +591,13 @@ public class OrderListActivity extends BaseActivity implements IPayOrderClickLis
                 waitPayFragment.setData();
                 completedOrderFragment.setData();
             }else if (requestCode == 0x1231){
+
+                if (allOrderFragment!=null) {
+                    allOrderFragment.setData();
+                }
+                if (waitReceiveFragment!=null ) {
+                    waitPayFragment.setData();
+                }
             }
         }
     }

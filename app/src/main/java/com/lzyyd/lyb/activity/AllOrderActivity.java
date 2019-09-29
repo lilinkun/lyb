@@ -531,4 +531,15 @@ public class AllOrderActivity extends BaseActivity implements AllOrderContract, 
     protected void onDestroy() {
         super.onDestroy();
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (resultCode == RESULT_OK && requestCode == 0x1231){
+            finish();
+        }
+
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

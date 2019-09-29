@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -33,6 +34,7 @@ import com.lzyyd.lyb.ui.RoundImageView;
 import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;
 import com.lzyyd.lyb.util.SoftKeyboardUtil;
+import com.lzyyd.lyb.util.UiHelper;
 import com.lzyyd.lyb.wxapi.WXEntryActivity;
 import com.lzyyd.lyb.wxapi.WXPayEntryActivity;
 import com.squareup.picasso.Picasso;
@@ -136,7 +138,7 @@ public class RechargeActivity extends BaseActivity implements OnTitleBarClickLis
             case R.id.recharge_commit:
 
                 if (!et_amount.getText().toString().trim().isEmpty() && Integer.valueOf(et_amount.getText().toString()) > 0) {
-                    rechargePresenter.setWxPay1("", et_amount.getText().toString(),"29","0","Android","com.lzyyd.lyb", ProApplication.SESSIONID(this));
+                    rechargePresenter.setWxPay1("", et_amount.getText().toString(),"30","0","Android","com.lzyyd.lyb", ProApplication.SESSIONID(this));
                 }
 
                 break;
@@ -247,11 +249,16 @@ public class RechargeActivity extends BaseActivity implements OnTitleBarClickLis
     @Override
     public void setWxLoginSuccess(String wxSuccess) {
         toast("充值成功");
-        rechargePresenter.getOrderData(ProApplication.SESSIONID(this));
+//        rechargePresenter.getOrderData(ProApplication.SESSIONID(this));
+        UiHelper.launcher(this, RechargeActivity.class);
+        setResult(RESULT_OK);
+        finish();
     }
 
     @Override
     public void setWxLoginFail(String msg) {
         toast("充值失败");
+        UiHelper.launcher(this, RechargeActivity.class);
+        finish();
     }
 }

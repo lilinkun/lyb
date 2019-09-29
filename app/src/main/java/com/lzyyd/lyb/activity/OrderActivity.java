@@ -298,7 +298,6 @@ public class OrderActivity extends BaseActivity implements SureOrderContract, Or
         bundle.putString(LzyydUtil.ORDERID,collectDeleteBean.getMessage()+"");
         bundle.putString(LzyydUtil.WHERE,"order");
         UiHelper.launcherForResultBundle(OrderActivity.this,PayActivity.class,0x1231,bundle);
-        finish();
         /*if (!tv_place_order.isClickable()){
             tv_place_order.setClickable(true);
         }
@@ -432,6 +431,11 @@ public class OrderActivity extends BaseActivity implements SureOrderContract, Or
                 linearLayout.setVisibility(View.VISIBLE);
                 setAddress(addressBean);
                 getFare(addressBean.getProvince(),addressBean.getCity());
+            }else if (requestCode == 0x1231){
+
+                setResult(RESULT_OK);
+                finish();
+
             }
         }
     }

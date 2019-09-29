@@ -22,16 +22,13 @@ import com.lzyyd.lyb.contract.PayContract;
 import com.lzyyd.lyb.entity.CollectDeleteBean;
 import com.lzyyd.lyb.entity.OrderDetailBean;
 import com.lzyyd.lyb.entity.PersonalInfoBean;
-import com.lzyyd.lyb.entity.WxRechangeBean;
 import com.lzyyd.lyb.interf.IWxLoginListener;
-import com.lzyyd.lyb.interf.IWxResultListener;
 import com.lzyyd.lyb.presenter.PayPresenter;
 import com.lzyyd.lyb.ui.CustomTitleBar;
 import com.lzyyd.lyb.util.Eyes;
 import com.lzyyd.lyb.util.LzyydUtil;
 import com.lzyyd.lyb.util.UiHelper;
 import com.lzyyd.lyb.wxapi.WXEntryActivity;
-import com.lzyyd.lyb.wxapi.WXPayEntryActivity;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -48,7 +45,7 @@ public class PayActivity extends BaseActivity implements PayContract, IWxLoginLi
     private String orderid;
     private String orderSn;
     private double totalPrice;
-    private String where;
+    private String whereStr;
     private Dialog payDialog;
     private PopupWindow popupWindow;
     private String point;
@@ -95,7 +92,7 @@ public class PayActivity extends BaseActivity implements PayContract, IWxLoginLi
 
         if (bundle != null){
             orderid = bundle.getString(LzyydUtil.ORDERID);
-            where = bundle.getString(LzyydUtil.WHERE);
+            whereStr = bundle.getString(LzyydUtil.WHERE);
         }
         payPresenter.orderDetail(orderid,ProApplication.SESSIONID(this));
         payPresenter.getInfo(ProApplication.SESSIONID(this));
@@ -167,7 +164,7 @@ public class PayActivity extends BaseActivity implements PayContract, IWxLoginLi
 
             case R.id.ll_back:
 
-                if (where.equals("goods")) {
+                if (whereStr.equals("goods")) {
                     Bundle bundle = new Bundle();
                     bundle.putInt("status", 0);
                     bundle.putString("order_sn", orderid);
@@ -205,7 +202,7 @@ public class PayActivity extends BaseActivity implements PayContract, IWxLoginLi
         numberFormat.setGroupingUsed(false);
 
         String wlmCoin = numberFormat.format(personalInfoBean.getBank_data().getAmount());
-        tv_balance.setText("唯乐币支付（剩余"+wlmCoin+"）");
+        tv_balance.setText("余额支付（剩余"+wlmCoin+"）");
 
         infoAmount = personalInfoBean.getBank_data().getAmount();
 
@@ -272,10 +269,12 @@ public class PayActivity extends BaseActivity implements PayContract, IWxLoginLi
 //            bundle.putInt("position",0);
 //            UiHelper.launcherBundle(this, OrderListActivity.class,bundle);
 
-            Bundle bundle = new Bundle();
-            bundle.putInt("status", 0);
-            bundle.putString("order_sn", orderid);
-            UiHelper.launcherForResultBundle(this, AllOrderActivity.class, 0x0987, bundle);
+            if (!whereStr.equals("order")) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("status", 0);
+                bundle.putString("order_sn", orderid);
+                UiHelper.launcherForResultBundle(this, AllOrderActivity.class, 0x0987, bundle);
+            }
             setResult(RESULT_OK);
             finish();
             return true;
@@ -306,16 +305,20 @@ public class PayActivity extends BaseActivity implements PayContract, IWxLoginLi
         Bundle bundle = new Bundle();
         bundle.putString("price",totalPrice+"");
         UiHelper.launcherForResultBundle(this,PayResultActivity.class,0x0987,bundle);
+        setResult(RESULT_OK);
+        finish();
     }
 
     @Override
     public void setWxLoginFail(String msg) {
 
         toast("支付失败");
-        Bundle bundle = new Bundle();
-        bundle.putInt("status", 0);
-        bundle.putString("order_sn", orderid);
-        UiHelper.launcherForResultBundle(this, AllOrderActivity.class, 0x0987, bundle);
+//        if (!whereStr.equals("order")) {
+            Bundle bundle = new Bundle();
+            bundle.putInt("status", 0);
+            bundle.putString("order_sn", orderid);
+            UiHelper.launcherForResultBundle(this, AllOrderActivity.class, 0x0987, bundle);
+//        }
         setResult(RESULT_OK);
         finish();
     }

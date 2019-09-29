@@ -319,7 +319,7 @@ public class CartOrderActivity extends BaseActivity implements SureOrderContract
         if (collectDeleteBean.getStatus() == 0) {
             Bundle bundle = new Bundle();
             bundle.putString(LzyydUtil.ORDERID,collectDeleteBean.getMessage()+"");
-            bundle.putString(LzyydUtil.WHERE,"order");
+            bundle.putString(LzyydUtil.WHERE,"goods");
             UiHelper.launcherForResultBundle(CartOrderActivity.this,PayActivity.class,0x1231,bundle);
             /*orderid = collectDeleteBean.getMessage();
 
@@ -459,6 +459,9 @@ public class CartOrderActivity extends BaseActivity implements SureOrderContract
                 linearLayout.setVisibility(View.VISIBLE);
                 setAddress(addressBean);
                 getFare(addressBean.getProvince(), addressBean.getCity());
+            }else if (requestCode == 0x1231){
+                setResult(RESULT_OK);
+                finish();
             }
         }
     }
@@ -545,4 +548,5 @@ public class CartOrderActivity extends BaseActivity implements SureOrderContract
         setResult(RESULT_OK);
         finish();
     }
+
 }
