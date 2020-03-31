@@ -49,6 +49,9 @@ public class LabelsView extends ViewGroup implements View.OnClickListener {
     private OnLabelClickListener mLabelClickListener;
     private OnLabelSelectChangeListener mLabelSelectChangeListener;
 
+    //label中数量为0的集合
+    private List<String> hasList;
+
     /**
      * Label的选择类型
      */
@@ -416,7 +419,7 @@ public class LabelsView extends ViewGroup implements View.OnClickListener {
      * @param <T>
      */
     public <T> void setLabels(List<T> labels, LabelTextProvider<T> provider,ArrayList<String> strings) {
-
+            hasList = strings;
 //        if (strings.size() > 0) {
             //清空原有的标签
             innerClearAllSelect();
@@ -482,6 +485,8 @@ public class LabelsView extends ViewGroup implements View.OnClickListener {
         if (!list.contains(provider.getLabelText(label, position, data))){
             label.setTextColor(getResources().getColor(R.color.gray));
             label.setClickable(false);
+            label.setFocusable(false);
+            label.setFocusableInTouchMode(false);
         }
     }
 
@@ -516,6 +521,11 @@ public class LabelsView extends ViewGroup implements View.OnClickListener {
     public void onClick(View v) {
         if (v instanceof TextView) {
             TextView label = (TextView) v;
+
+            if (!hasList.contains(((TextView) v).getText().toString())){
+                return;
+            }
+
             if (mSelectType != SelectType.NONE) {
                 if (label.isSelected()) {
                     if (mSelectType != SelectType.SINGLE_IRREVOCABLY

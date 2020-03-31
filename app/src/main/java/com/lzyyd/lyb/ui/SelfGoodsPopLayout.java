@@ -443,7 +443,7 @@ public class SelfGoodsPopLayout extends RelativeLayout implements View.OnClickLi
                         if (flowLayout.getSelectLabelDatas().size() > 0 ){
                             onAddCart.mRightNowBuy(selfGoodsBean, goodsChooseBean, num);
                         }else {
-                            UToast.show(context,"请完整规格");
+                            UToast.show(context,"请选择完整规格");
                         }
                     }
                 }else if (selfGoodsBean.getQty() == 2) {

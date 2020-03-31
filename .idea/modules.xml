@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/jdsdk_lib/jdsdk_lib.iml" filepath="$PROJECT_DIR$/jdsdk_lib/jdsdk_lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/labels/labels.iml" filepath="$PROJECT_DIR$/labels/labels.iml" />
       <module fileurl="file://$PROJECT_DIR$/lyb.iml" filepath="$PROJECT_DIR$/lyb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lyb.iml" filepath="$PROJECT_DIR$/.idea/lyb.iml" />
     </modules>
   </component>
 </project>
